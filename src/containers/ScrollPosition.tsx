@@ -5,7 +5,7 @@ import { usePreviousState, useWheelListener } from '../hooks';
 
 interface ScrollPositionContainerProps {
   color?: string;
-  pauseScrolling: boolean;
+  pauseScrolling?: boolean;
   numberPositions: number;
   scrollPosition: number;
   onScrollPositionChange: (index: number) => void;
@@ -13,23 +13,36 @@ interface ScrollPositionContainerProps {
 
 /*
   Example Usage:
+  
+  import { Element, scroller } from 'react-scroll'
   {
     const [scrollPosition, setScrollPosition] = useState(1);
-    const numberScrollPositions = 4;
+    const [pauseScrolling, setPauseScrolling] = useState(null);
+    const [blockScroll] = useScrollBlock();
+    blockScroll();
 
     useEffect(() => {
-      console.log("scroll positon changed ", scrollPosition);
+      console.log("scroll position", scrollPosition);
+      setPauseScrolling(true);
+      scroller.scrollTo(`div${scrollPosition}`, {
+        duration: 500,
+        smooth: true
+      });
+      const timeout = setTimeout(() => {
+        setPauseScrolling(false);
+      }, 500)
+      return () => clearTimeout(timeout)
     }, [scrollPosition])
 
     return (
       <>
-        <ScrollPosition numberPositions={numberScrollPositions} scrollPosition={scrollPosition} onScrollPositionChange={setScrollPosition} />
+        <ScrollPosition pauseScrolling={pauseScrolling} numberPositions={numberScrollPositions} scrollPosition={scrollPosition} onScrollPositionChange={setScrollPosition} />
       </>
     );
   }
 */
 
-const ScrollPositionContainer: React.FC<ScrollPositionContainerProps> = ({ color, pauseScrolling, numberPositions, scrollPosition, onScrollPositionChange }) => {
+const ScrollPositionContainer: React.FC<ScrollPositionContainerProps> = ({ color, pauseScrolling = false, numberPositions, scrollPosition, onScrollPositionChange }) => {
   const wheelListener = useWheelListener();
   const prevWheelListener = usePreviousState(wheelListener);
 

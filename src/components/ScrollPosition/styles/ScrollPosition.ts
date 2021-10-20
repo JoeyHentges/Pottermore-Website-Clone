@@ -6,7 +6,6 @@ export const PositionInner = styled.div`
   width: 8px;
   left: 2px;
   top: 2px;
-  background: #fff;
   border-radius: 50%
 `;
 
@@ -39,7 +38,6 @@ export const PositionContainer = styled.div`
   width: 12px;
   color: #fff;
   border-radius: 50%;
-  border: 1px solid #fff;
   cursor: pointer;
   position: relative;
   opacity: ${({ active }) => (active ? 'unset' : '0.5')};
@@ -56,7 +54,6 @@ export const PositionContainer = styled.div`
       content: "";
       width: 1px;
       height: 50px;
-      background-color: #fff;
       opacity: 0.3;
       left: 5px;
       bottom: 12px;
@@ -64,6 +61,11 @@ export const PositionContainer = styled.div`
       transform-origin: bottom;
       animation-duration: 10s;
       animation-iteration-count: infinite;
+    }
+
+    @media only screen and (max-width: 600px) {
+      margin-top: 10px;
+      &:before { height: 0px; }
     }
   }
 
@@ -77,6 +79,7 @@ export const PositionContainer = styled.div`
 })};
     animation-duration: 10s;
     animation-iteration-count: infinite;
+    @media only screen and (max-width: 600px) { animation-name: none; }
   }
 
   :nth-child(2) {
@@ -87,6 +90,7 @@ export const PositionContainer = styled.div`
   four: -5,
   five: 0,
 })};
+    @media only screen and (max-width: 600px) { animation-name: none; }
     &:before {
       animation-name: ${MoveLineAnimation({
   one: -20,
@@ -95,6 +99,7 @@ export const PositionContainer = styled.div`
   four: 8,
   five: .85,
 })};
+      @media only screen and (max-width: 600px) { animation-name: none; }
     }
   }
 
@@ -106,6 +111,7 @@ export const PositionContainer = styled.div`
   four: 5,
   five: 0,
 })};
+    @media only screen and (max-width: 600px) { animation-name: none; }
     &:before {
       animation-name: ${MoveLineAnimation({
   one: 12,
@@ -114,6 +120,7 @@ export const PositionContainer = styled.div`
   four: -11,
   five: 1,
 })};
+      @media only screen and (max-width: 600px) { animation-name: none; }
     }
   }
 
@@ -125,6 +132,7 @@ export const PositionContainer = styled.div`
   four: -10,
   five: -7,
 })};
+    @media only screen and (max-width: 600px) { animation-name: none; }
     &:before {
       animation-name: ${MoveLineAnimation({
   one: -18,
@@ -133,15 +141,21 @@ export const PositionContainer = styled.div`
   four: 18,
   five: .9,
 })};
+      @media only screen and (max-width: 600px) { animation-name: none; }
     }
   }
 `;
 
 export const Container = styled.div`
   position: fixed;
-  right: 35px;
-  top: calc(50vh - 150px);
+  right: 100px;
+  top: calc(50vh - 100px);
   z-index: 998;
+
+  @media only screen and (max-width: 600px) {
+    right: 35px;
+    top: calc(50vh - 35px);
+  }
 
   ${PositionInner} {
     background: ${({ color }) => color ? color : '#ffffff'};
