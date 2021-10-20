@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { Element, scroller } from 'react-scroll'
 
+import { FlexContainer } from '../components';
 import { ScrollPosition } from '../containers';
 import { useScrollBlock } from '../hooks';
 
@@ -31,25 +32,32 @@ const Home: React.FC<{}> = () => {
       <ScrollPosition pauseScrolling={pauseScrolling} numberPositions={4} scrollPosition={scrollPosition} onScrollPositionChange={setScrollPosition} />
 
       <Element name="scroll-position-1">
-        <div style={{ height: '100vh', backgroundImage: 'url(https://my.wizardingworld.com/static/media/bg.6a589e6d.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+        <FlexContainer fullscreen flexDirection="column" imageUrls={{ desktop: 'https://my.wizardingworld.com/static/media/bg.6a589e6d.jpg' }}>
           <div>hi</div>
           <div>hi</div>
           <div>hi</div>
-          <div>hi</div>
-          <div>hi</div>
-          <div>hi</div>
-          <div>hi</div>
-          <div>hi</div>
-        </div>
+        </FlexContainer>
       </Element>
       <Element name="scroll-position-2">
-        <div style={{ height: '100vh', backgroundImage: 'url(https://my.wizardingworld.com/static/media/bg.ab868aaa.jpg)', backgroundSize: 'cover' }} />
+        <FlexContainer fullscreen flexDirection="column" imageUrls={{ desktop: 'https://my.wizardingworld.com/static/media/bg.ab868aaa.jpg' }}>
+          <div>hi</div>
+          <div>hi</div>
+          <div>hi</div>
+        </FlexContainer>
       </Element>
       <Element name="scroll-position-3">
-        <div style={{ height: '100vh', backgroundImage: 'url(	https://my.wizardingworld.com/static/media/bg.42ff4c84.jpg)', backgroundSize: 'cover' }} />
+        <FlexContainer fullscreen flexDirection="column" imageUrls={{ desktop: 'https://my.wizardingworld.com/static/media/bg.42ff4c84.jpg' }}>
+          <div>hi</div>
+          <div>hi</div>
+          <div>hi</div>
+        </FlexContainer>
       </Element>
       <Element name="scroll-position-4">
-        <div style={{ height: '100vh', backgroundImage: 'url(https://my.wizardingworld.com/static/media/bg.d26c2b3f.jpg)', backgroundSize: 'cover' }} />
+        <FlexContainer fullscreen flexDirection="column" imageUrls={{ desktop: 'https://my.wizardingworld.com/static/media/bg.d26c2b3f.jpg' }}>
+          <div>hi</div>
+          <div>hi</div>
+          <div>hi</div>
+        </FlexContainer>
       </Element>
 
     </div>

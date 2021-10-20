@@ -40,8 +40,6 @@ const GlobalStyles = createGlobalStyle`
     color: #33334F;
     font-size: 16px;
     margin: 0px;
-
-    background: black;
   }
 `;
 
