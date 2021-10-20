@@ -5,7 +5,7 @@ import { connect, useDispatch } from 'react-redux';
 import * as ROUTES from '../constants/routes';
 import { forgotPassword } from '../redux/actions';
 
-const ForgotPassword: React.FC<{authError: string}> = ({authError}) => {
+const ForgotPassword: React.FC<{ authError: string }> = ({ authError }) => {
   const [email, setEmail] = useState('');
 
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const ForgotPassword: React.FC<{authError: string}> = ({authError}) => {
       <a href={ROUTES.SIGN_IN}>Sign In</a>
     </>
   );
-}
+};
 
 const mapStateToProps = (state) => ({
   authError: state.auth.authError,

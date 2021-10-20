@@ -28,8 +28,7 @@
     "build": "next build",
     "start": "next start",
     "docker-build": "docker build -t nextjs-test .",
-    "docker-run": "docker run -d -p 3333:3000 nextjs-test:latest",
-    "prettier": "prettier --check"
+    "docker-run": "docker run -d -p 3333:3000 nextjs-test:latest"
   },
   "eslintConfig": {
     "extends": "react-app"

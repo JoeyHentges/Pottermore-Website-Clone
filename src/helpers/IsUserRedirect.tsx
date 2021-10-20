@@ -6,10 +6,10 @@ interface IsUserRedirectProps {
     uid: string;
   };
   loggedInPath: string;
-  children: JSX.Element
+  children: JSX.Element;
 }
 
-const IsUserRedirect: React.FC<IsUserRedirectProps> = ({auth, loggedInPath, children}) => {
+const IsUserRedirect: React.FC<IsUserRedirectProps> = ({ auth, loggedInPath, children }) => {
   const user = !!auth.uid;
 
   const router = useRouter();
@@ -23,7 +23,7 @@ const IsUserRedirect: React.FC<IsUserRedirectProps> = ({auth, loggedInPath, chil
   }
 
   return null;
-}
+};
 
 const mapStateToProps = (state) => ({
   auth: state.firebase.auth,

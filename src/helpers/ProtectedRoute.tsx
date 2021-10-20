@@ -6,10 +6,10 @@ interface ProtectedRouteProps {
     uid: string;
   };
   redirectPath: string;
-  children: JSX.Element
+  children: JSX.Element;
 }
 
-const ProtectedRoute: React.FC<ProtectedRouteProps> = ({auth, redirectPath, children}) => {
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ auth, redirectPath, children }) => {
   const user = !!auth.uid;
 
   const router = useRouter();
@@ -23,7 +23,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({auth, redirectPath, chil
   }
 
   return null;
-}
+};
 
 const mapStateToProps = (state) => ({
   auth: state.firebase.auth,

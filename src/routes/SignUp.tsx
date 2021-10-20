@@ -5,7 +5,7 @@ import { connect, useDispatch } from 'react-redux';
 import * as ROUTES from '../constants/routes';
 import { signUp } from '../redux/actions';
 
-const SignUp: React.FC<{authError: string}> = ({authError}) => {
+const SignUp: React.FC<{ authError: string }> = ({ authError }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');

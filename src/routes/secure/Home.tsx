@@ -33,6 +33,6 @@ const SecureHome: React.FC<{}> = ({}) => {
       <h1>Secure Home</h1>
     </>
   );
-}
+};
 
 export default SecureHome;
