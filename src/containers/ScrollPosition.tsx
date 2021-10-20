@@ -5,6 +5,7 @@ import { usePreviousState, useWheelListener } from '../hooks';
 
 interface ScrollPositionContainerProps {
   color?: string;
+  pauseScrolling: boolean;
   numberPositions: number;
   scrollPosition: number;
   onScrollPositionChange: (index: number) => void;
@@ -28,34 +29,35 @@ interface ScrollPositionContainerProps {
   }
 */
 
-const ScrollPositionContainer: React.FC<ScrollPositionContainerProps> = ({color, numberPositions, scrollPosition, onScrollPositionChange}) => {
+const ScrollPositionContainer: React.FC<ScrollPositionContainerProps> = ({ color, pauseScrolling, numberPositions, scrollPosition, onScrollPositionChange }) => {
   const wheelListener = useWheelListener();
   const prevWheelListener = usePreviousState(wheelListener);
 
   useEffect(() => {
+    if (pauseScrolling) return;
     if (!prevWheelListener) return;
     if (wheelListener.changed === prevWheelListener.changed) return;
 
     if (wheelListener.goingUp) {
-      scrollPosition > 1 && onScrollPositionChange(scrollPosition-1) 
+      scrollPosition > 1 && onScrollPositionChange(scrollPosition - 1)
     } else {
-      scrollPosition < numberPositions && onScrollPositionChange(scrollPosition+1);
+      scrollPosition < numberPositions && onScrollPositionChange(scrollPosition + 1);
     }
   }, [wheelListener])
 
   const getPositionContainers = () => {
     const array = [];
     for (let i = 0; i < numberPositions; i += 1) {
-      array.push(<ScrollPosition.PositionContainer key={`scroll-position-${i}`} active={i+1 === scrollPosition} onClick={() => onScrollPositionChange(i+1)} />)
+      array.push(<ScrollPosition.PositionContainer key={`scroll-position-${i}`} active={i + 1 === scrollPosition} onClick={() => !pauseScrolling && onScrollPositionChange(i + 1)} />)
     }
     return array;
   }
 
   return (
     <>
-    <ScrollPosition color={color}>
-      {getPositionContainers()}
-    </ScrollPosition>
+      <ScrollPosition color={color}>
+        {getPositionContainers()}
+      </ScrollPosition>
     </>
   );
 }

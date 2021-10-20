@@ -138,7 +138,7 @@ export const PositionContainer = styled.div`
 `;
 
 export const Container = styled.div`
-  position: absolute;
+  position: fixed;
   right: 35px;
   top: calc(50vh - 150px);
   z-index: 998;

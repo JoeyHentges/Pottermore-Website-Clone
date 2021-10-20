@@ -57,7 +57,7 @@ export const useWheelListener = () => {
     window.addEventListener("wheel", handleWheel, { passive: true });
 
     return () => window.removeEventListener("wheel", handleWheel);
-  }, [goingUp, changed]);
+  }, [changed]);
 
   return { goingUp, direction: goingUp ? 'up' : 'down', changed } as WheelListener;
 };
