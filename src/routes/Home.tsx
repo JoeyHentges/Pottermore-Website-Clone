@@ -15,7 +15,7 @@ const Home: React.FC<{}> = () => {
   return (
     <>
       <Helmet title="Home" />
-      <ScrollPosition numberPositions={numberScrollPositions} onScrollPositionChange={setScrollPosition} />
+      <ScrollPosition numberPositions={numberScrollPositions} scrollPosition={scrollPosition} onScrollPositionChange={setScrollPosition} />
       <h1>Home</h1>
     </>
   );

@@ -6,6 +6,7 @@ import { usePreviousState, useWheelListener } from '../hooks';
 interface ScrollPositionContainerProps {
   color?: string;
   numberPositions: number;
+  scrollPosition: number;
   onScrollPositionChange: (index: number) => void;
 }
 
@@ -21,38 +22,31 @@ interface ScrollPositionContainerProps {
 
     return (
       <>
-        <ScrollPosition numberPositions={numberScrollPositions} onScrollPositionChange={setScrollPosition} />
+        <ScrollPosition numberPositions={numberScrollPositions} scrollPosition={scrollPosition} onScrollPositionChange={setScrollPosition} />
       </>
     );
   }
 */
 
-const ScrollPositionContainer: React.FC<ScrollPositionContainerProps> = ({color, numberPositions, onScrollPositionChange}) => {
-
+const ScrollPositionContainer: React.FC<ScrollPositionContainerProps> = ({color, numberPositions, scrollPosition, onScrollPositionChange}) => {
   const wheelListener = useWheelListener();
   const prevWheelListener = usePreviousState(wheelListener);
-
-  const [scrollPosition, setScrollPosition] = useState(1);
 
   useEffect(() => {
     if (!prevWheelListener) return;
     if (wheelListener.changed === prevWheelListener.changed) return;
 
     if (wheelListener.goingUp) {
-      scrollPosition > 1 && setScrollPosition(scrollPosition-1) 
+      scrollPosition > 1 && onScrollPositionChange(scrollPosition-1) 
     } else {
-      scrollPosition < numberPositions && setScrollPosition(scrollPosition+1);
+      scrollPosition < numberPositions && onScrollPositionChange(scrollPosition+1);
     }
   }, [wheelListener])
-
-  useEffect(() => {
-    onScrollPositionChange(scrollPosition);
-  }, [scrollPosition])
 
   const getPositionContainers = () => {
     const array = [];
     for (let i = 0; i < numberPositions; i += 1) {
-      array.push(<ScrollPosition.PositionContainer key={`scroll-position-${i}`} active={i+1 === scrollPosition} onClick={() => setScrollPosition(i+1)} />)
+      array.push(<ScrollPosition.PositionContainer key={`scroll-position-${i}`} active={i+1 === scrollPosition} onClick={() => onScrollPositionChange(i+1)} />)
     }
     return array;
   }
