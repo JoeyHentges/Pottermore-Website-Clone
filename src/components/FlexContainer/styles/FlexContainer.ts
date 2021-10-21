@@ -4,13 +4,15 @@ export const Container = styled.div`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection};
   height: ${({ fullscreen }) => fullscreen ? '100vh' : '100%'};
-  background: ${({ background, imageUrls }) => imageUrls ? `url(${imageUrls.desktop})` : background};
-  background-size: cover;
-  background-repeat: no-repeat;
   justify-content: space-between;
   align-tems: center;
+  background: ${({ background, images }) => images ? `url(${images.desktop})` : background};
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @media only screen and (max-width: 600px) {
-    background: ${({ background, imageUrls }) => imageUrls ? `url(${imageUrls.mobile})` : background};
+    background: ${({ background, images }) => images ? `url(${images.mobile ? images.mobile : images.desktop})` : background};
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 `;

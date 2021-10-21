@@ -40,7 +40,7 @@ const Home: React.FC<{}> = () => {
         <FlexContainer
           fullscreen
           flexDirection="column"
-          imageUrls={{ desktop: 'https://my.wizardingworld.com/static/media/bg.6a589e6d.jpg' }}
+          images={{ desktop: 'https://my.wizardingworld.com/static/media/bg.6a589e6d.jpg' }}
         >
           <div>hi</div>
           <div>hi</div>
@@ -51,7 +51,7 @@ const Home: React.FC<{}> = () => {
         <FlexContainer
           fullscreen
           flexDirection="column"
-          imageUrls={{ desktop: 'https://my.wizardingworld.com/static/media/bg.ab868aaa.jpg' }}
+          images={{ desktop: 'https://my.wizardingworld.com/static/media/bg.ab868aaa.jpg' }}
         >
           <div>hi</div>
           <div>hi</div>
@@ -62,7 +62,10 @@ const Home: React.FC<{}> = () => {
         <FlexContainer
           fullscreen
           flexDirection="column"
-          imageUrls={{ desktop: 'https://my.wizardingworld.com/static/media/bg.42ff4c84.jpg' }}
+          images={{
+            desktop: 'https://my.wizardingworld.com/static/media/bg.42ff4c84.jpg',
+            mobile: 'https://my.wizardingworld.com/static/media/bg.f5d34885.jpg',
+          }}
         >
           <div>hi</div>
           <div>hi</div>
@@ -73,7 +76,7 @@ const Home: React.FC<{}> = () => {
         <FlexContainer
           fullscreen
           flexDirection="column"
-          imageUrls={{ desktop: 'https://my.wizardingworld.com/static/media/bg.d26c2b3f.jpg' }}
+          images={{ desktop: 'https://my.wizardingworld.com/static/media/bg.d26c2b3f.jpg' }}
         >
           <div>hi</div>
           <div>hi</div>
