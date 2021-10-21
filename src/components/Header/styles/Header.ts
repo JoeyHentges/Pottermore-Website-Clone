@@ -9,12 +9,12 @@ export const Navbar = styled.div`
 `;
 
 export const HeaderContainer = styled.div`
-  width: calc(100% - 142px);
+  width: calc(100% - 200px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 72px;
+  padding: 0px 100px;
   transition: background-color 0.5s ease;
 
   height: ${({ height }) => height}px;

@@ -14,7 +14,7 @@ const Home: React.FC<{}> = ({}) => {
         navbarBackground="transparent"
         center={
           <a href="/">
-            <img src="https://via.placeholder.com/70x51" />
+            <img style={{ width: 70, height: 51 }} src="images/wizarding_world_logo.svg" />
           </a>
         }
         right={
