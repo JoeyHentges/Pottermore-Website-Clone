@@ -22,21 +22,25 @@ interface ScrollPositionContainerProps {
     blockScroll();
 
     useEffect(() => {
-      console.log("scroll position", scrollPosition);
       setPauseScrolling(true);
-      scroller.scrollTo(`div${scrollPosition}`, {
+      scroller.scrollTo(`scroll-position-${scrollPosition}`, {
         duration: 500,
-        smooth: true
+        smooth: true,
       });
       const timeout = setTimeout(() => {
         setPauseScrolling(false);
-      }, 500)
-      return () => clearTimeout(timeout)
-    }, [scrollPosition])
+      }, 500);
+      return () => clearTimeout(timeout);
+    }, [scrollPosition]);
 
     return (
       <>
-        <ScrollPosition pauseScrolling={pauseScrolling} numberPositions={numberScrollPositions} scrollPosition={scrollPosition} onScrollPositionChange={setScrollPosition} />
+        <ScrollPosition
+          pauseScrolling={pauseScrolling}
+          numberPositions={4}
+          scrollPosition={scrollPosition}
+          onScrollPositionChange={setScrollPosition}
+        />
       </>
     );
   }

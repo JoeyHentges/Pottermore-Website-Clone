@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: ${({ flexDirection }) => flexDirection};
   height: ${({ fullscreen }) => fullscreen ? '100vh' : '100%'};
   justify-content: space-between;
-  align-tems: center;
+  align-items: center;
   background: ${({ background, images }) => images ? `url(${images.desktop})` : background};
   background-size: cover;
   background-repeat: no-repeat;
