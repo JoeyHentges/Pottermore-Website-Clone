@@ -5,7 +5,11 @@ export const Navbar = styled.div`
   display: flex;
   justify-content: center;
   background: ${({ background }) => background};
-  transition: background 0.5s ease;
+  transition: background 0.4s ease-in;
+
+  .navbar-dropdown {
+    background: ${({ background }) => background};
+  }
 `;
 
 export const HeaderContainer = styled.div`
@@ -16,7 +20,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   padding: 0px 100px;
   flex-basis: 33.33%;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.4s ease-in;
 
   height: ${({ height }) => height}px;
   background: ${({ background }) => background};
@@ -39,6 +43,9 @@ export const Container = styled.div`
     ${HeaderContainer} {
       background: ${({ defaultBackground }) => defaultBackground};
     }
+    .navbar-dropdown {
+      background: ${({ navbarDefaultBackground }) => navbarDefaultBackground};
+    }
   }
 
   &:hover {
@@ -48,16 +55,15 @@ export const Container = styled.div`
     ${HeaderContainer} {
       background: ${({ defaultBackground }) => defaultBackground};
     }
+    .navbar-dropdown {
+      background: ${({ navbarDefaultBackground }) => navbarDefaultBackground};
+    }
   }
 `;
 
 export const HeaderItem = styled.div`
   margin-top: 5px;
   width: 100%;
-
-  :nth-child(1) {
-    
-  }
 
   :nth-child(2) {
     text-align: center;

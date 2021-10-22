@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { FlexContainer } from '../components';
 
-import { Header } from '../containers';
+import { Header, Navbar } from '../containers';
 import { useMobile } from '../hooks';
 
 const Home: React.FC<{}> = ({}) => {
@@ -35,45 +35,7 @@ const Home: React.FC<{}> = ({}) => {
             </svg>
           </a>
         }
-        navbar={
-          <div
-            style={{
-              padding: '15px 0',
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}
-          >
-            <a href="#" style={{ color: 'white' }}>
-              NEWS & FEATURES
-            </a>
-            <a href="#" style={{ color: 'white' }}>
-              QUIZZES
-            </a>
-            <a href="#" style={{ color: 'white' }}>
-              PUZZLES
-            </a>
-            <a href="#" style={{ color: 'white' }}>
-              J.K. ROWLING ARCHIVE
-            </a>
-            <a href="#" style={{ color: 'white' }}>
-              DISCOVER
-            </a>
-            <a href="#" style={{ color: 'white' }}>
-              20 YEARS OF MOVIE MAGIC
-            </a>
-            <a href="#" style={{ color: 'white' }}>
-              HOGWARTS SORTING
-            </a>
-            <a href="#" style={{ color: 'white' }}>
-              PINS
-            </a>
-            <a href="#" style={{ color: 'white' }}>
-              SHOP
-            </a>
-          </div>
-        }
+        navbar={<Navbar />}
       />
       <FlexContainer
         fullscreen
