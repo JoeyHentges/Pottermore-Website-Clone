@@ -2,9 +2,20 @@ import React from 'react';
 
 import { Container, HeaderContainer, HeaderItem, Navbar } from './styles/Header';
 
-export default function Header({ defaultBackground, navbarDefaultBackground, children, ...restProps }) {
+export default function Header({
+  defaultBackground,
+  navbarDefaultBackground,
+  dropdownBackground,
+  children,
+  ...restProps
+}) {
   return (
-    <Container defaultBackground={defaultBackground} navbarDefaultBackground={navbarDefaultBackground} {...restProps}>
+    <Container
+      defaultBackground={defaultBackground}
+      navbarDefaultBackground={navbarDefaultBackground}
+      dropdownBackground={dropdownBackground}
+      {...restProps}
+    >
       {children}
     </Container>
   );

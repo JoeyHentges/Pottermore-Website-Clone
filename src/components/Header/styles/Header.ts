@@ -8,7 +8,7 @@ export const Navbar = styled.div`
   transition: background 0.4s ease-in;
 
   .navbar-dropdown {
-    background: ${({ background }) => background};
+    background: ${({ dropdownBackground }) => dropdownBackground};
   }
 `;
 
@@ -35,6 +35,7 @@ export const Container = styled.div`
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9999;
 
   &.active {
     ${Navbar} {
@@ -44,7 +45,7 @@ export const Container = styled.div`
       background: ${({ defaultBackground }) => defaultBackground};
     }
     .navbar-dropdown {
-      background: ${({ navbarDefaultBackground }) => navbarDefaultBackground};
+      background: ${({ dropdownBackground }) => dropdownBackground};
     }
   }
 
@@ -56,7 +57,16 @@ export const Container = styled.div`
       background: ${({ defaultBackground }) => defaultBackground};
     }
     .navbar-dropdown {
-      background: ${({ navbarDefaultBackground }) => navbarDefaultBackground};
+      background: ${({ dropdownBackground }) => dropdownBackground};
+    }
+  }
+
+  .dropdown-active {
+    ${Navbar} {
+      background: ${({ dropdownBackground }) => dropdownBackground};
+    }
+    .navbar-dropdown {
+      background: ${({ dropdownBackground }) => dropdownBackground};
     }
   }
 `;

@@ -1,10 +1,23 @@
 import React from 'react';
 
-import { Container, NavbarItem, NavbarText, NavbarLink, NavbarDropdown, NavbarDropdownIcon } from './styles/Navbar';
+import {
+  Container,
+  NavbarItemContainer,
+  NavbarItem,
+  NavbarText,
+  NavbarLink,
+  NavbarDropdownBackground,
+  NavbarDropdown,
+  NavbarDropdownIcon,
+} from './styles/Navbar';
 
 export default function Navbar({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
+
+Navbar.NavbarItemContainer = function NavbarNavbarItemContainer({ children, ...restProps }) {
+  return <NavbarItemContainer {...restProps}>{children}</NavbarItemContainer>;
+};
 
 Navbar.NavbarItem = function NavbarNavbarItem({ children, ...restProps }) {
   return <NavbarItem {...restProps}>{children}</NavbarItem>;
@@ -20,6 +33,10 @@ Navbar.NavbarLink = function NavbarNavbarLink({ children, ...restProps }) {
 
 Navbar.NavbarDropdown = function NavbarNavbarDropdown({ children, ...restProps }) {
   return <NavbarDropdown {...restProps}>{children}</NavbarDropdown>;
+};
+
+Navbar.NavbarDropdownBackground = function NavbarNavbarDropdownBackground({ ...restProps }) {
+  return <NavbarDropdownBackground {...restProps} />;
 };
 
 Navbar.NavbarDropdownIcon = function NavbarNavbarDropdownIcon({ children, ...restProps }) {

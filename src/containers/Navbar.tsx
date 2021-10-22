@@ -4,49 +4,62 @@ import clsx from 'clsx';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 
 import { Navbar } from '../components';
-import { NavbarDropdownIcon } from '../components/Navbar/styles/Navbar';
 
 let mock;
 
 const NavbarContainer: React.FC = () => {
   const pathname = useRouter().pathname;
   const [dropdownActive, setDropdownActive] = useState('');
+  const [dropdownContent, setDropdownContent] = useState(null);
 
   return (
     <Navbar className={dropdownActive !== '' && 'dropdown-active'} onMouseLeave={() => setDropdownActive('')}>
-      {mock.map((item) => {
-        return (
-          <>
-            {item.type === 'dropdown' ? (
-              <Navbar.NavbarItem
-                className={clsx(
-                  item.activePaths.includes(pathname) && 'active',
-                  dropdownActive === item.title && 'dropdown-active'
-                )}
-                onClick={() => (dropdownActive === item.title ? setDropdownActive('') : setDropdownActive(item.title))}
-              >
-                <Navbar.NavbarText>
-                  {item.title}{' '}
-                  <NavbarDropdownIcon>
-                    <HiOutlineChevronDown />
-                  </NavbarDropdownIcon>
-                </Navbar.NavbarText>
-              </Navbar.NavbarItem>
-            ) : (
-              <Navbar.NavbarItem className={clsx(item.activePaths.includes(pathname) && 'active')}>
-                <Navbar.NavbarLink href={item.link}>
-                  <Navbar.NavbarText>{item.title}</Navbar.NavbarText>
-                </Navbar.NavbarLink>
-              </Navbar.NavbarItem>
-            )}
-            <Navbar.NavbarDropdown
-              className={clsx('navbar-dropdown', dropdownActive === item.title && 'dropdown-active')}
-            >
-              {item.dropdownContent}
-            </Navbar.NavbarDropdown>
-          </>
-        );
-      })}
+      <Navbar.NavbarItemContainer>
+        {mock.map((item) => {
+          if (item.type === 'dropdown') {
+            return (
+              <React.Fragment key={item.title}>
+                <Navbar.NavbarItem
+                  className={clsx(
+                    item.activePaths.includes(pathname) && 'active',
+                    dropdownActive === item.title && 'dropdown-active'
+                  )}
+                  onClick={() => {
+                    if (dropdownActive === item.title) {
+                      setDropdownActive('');
+                    } else {
+                      setDropdownActive(item.title);
+                      setDropdownContent(item.dropdownContent);
+                    }
+                  }}
+                >
+                  <Navbar.NavbarText>
+                    {item.title}{' '}
+                    <Navbar.NavbarDropdownIcon>
+                      <HiOutlineChevronDown />
+                    </Navbar.NavbarDropdownIcon>
+                  </Navbar.NavbarText>
+                </Navbar.NavbarItem>
+              </React.Fragment>
+            );
+          }
+          return (
+            <Navbar.NavbarItem key={item.title} className={clsx(item.activePaths.includes(pathname) && 'active')}>
+              <Navbar.NavbarLink href={item.link}>
+                <Navbar.NavbarText>{item.title}</Navbar.NavbarText>
+              </Navbar.NavbarLink>
+            </Navbar.NavbarItem>
+          );
+        })}
+      </Navbar.NavbarItemContainer>
+
+      <Navbar.NavbarDropdown className={clsx('navbar-dropdown', dropdownActive !== '' && 'dropdown-active')}>
+        {dropdownContent}
+      </Navbar.NavbarDropdown>
+      <Navbar.NavbarDropdownBackground
+        className={dropdownActive !== '' && 'dropdown-active'}
+        onMouseEnter={() => setDropdownActive('')}
+      />
     </Navbar>
   );
 };
