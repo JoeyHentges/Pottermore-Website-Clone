@@ -28,6 +28,7 @@ export const HeaderContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     width: calc(100% - 40px);
     padding: 0px 20px;
+    background-color:rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -43,6 +44,9 @@ export const Container = styled.div`
     }
     ${HeaderContainer} {
       background: ${({ defaultBackground }) => defaultBackground};
+      @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
+        background-color:rgba(0, 0, 0, 0.2);
+      }
     }
     .navbar-dropdown {
       background: ${({ dropdownBackground }) => dropdownBackground};

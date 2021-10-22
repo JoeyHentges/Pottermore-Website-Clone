@@ -10,6 +10,7 @@ export const Container = styled.div`
   padding: 15px 0;
   width: 100%;
   border-top: 1px solid hsla(0,0%,100%,.15);
+  font-size: 13px;
 
   &.dropdown-active {
     ${NavbarText} {
@@ -26,8 +27,8 @@ export const Container = styled.div`
 `;
 
 export const NavbarItemContainer = styled.div`
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1000px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -36,10 +37,13 @@ export const NavbarItemContainer = styled.div`
 
 export const NavbarDropdownIcon = styled.span`
   display: inline-block;
+  position: relative;
+  top: 1px;
+  margin-left: 5px;
   transform-origin: 50% 45%;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
   transition: transform .2s ease-in;
   -webkit-transition: -webkit-transform .2s ease-in;
   -moz-transition: -moz-transform .2s ease-in;
@@ -94,9 +98,9 @@ export const NavbarItem = styled.div`
 
   &.dropdown-active {
     ${NavbarDropdownIcon} {
-      -webkit-transform: rotate(-180deg);
-      -moz-transform: rotate(-180deg);
-      transform: rotate(-180deg);
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      transform: rotate(-90deg);
       margin-bottom: 25px;
     }
     

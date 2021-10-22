@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
-import { HiOutlineChevronDown } from 'react-icons/hi';
 
 import { Navbar } from '../components';
 
@@ -36,7 +35,7 @@ const NavbarContainer: React.FC = () => {
                   <Navbar.NavbarText>
                     {item.title}{' '}
                     <Navbar.NavbarDropdownIcon>
-                      <HiOutlineChevronDown />
+                      <img src="icons/chevron_icon.svg" />
                     </Navbar.NavbarDropdownIcon>
                   </Navbar.NavbarText>
                 </Navbar.NavbarItem>

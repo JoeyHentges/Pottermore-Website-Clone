@@ -6,7 +6,7 @@ import { Header, Navbar } from '../containers';
 import { useMobile } from '../hooks';
 
 const Home: React.FC<{}> = ({}) => {
-  const isMobile = useMobile('xs');
+  const isMobile = useMobile('sm');
 
   useEffect(() => {
     console.log(isMobile);
@@ -56,7 +56,6 @@ const Home: React.FC<{}> = ({}) => {
             color: 'white',
           }}
         >
-          <img src="https://www.wizardingworld.com/_next/image?url=%2Fimages%2Fpages%2Fhome%2Flogo.png&w=640&q=75" />
           <h1>Celebrate 20 years of the first film, Harry Potter and the Philosopher's Stone</h1>
           <p>
             Join us for 20 Years of Movie Magic as we explore iconic scenes from the first film. This week, join us in

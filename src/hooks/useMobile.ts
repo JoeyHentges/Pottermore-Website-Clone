@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { defaultTheme } from "../../theme";
 
 // Hook
 export const useMobile = (size: string) => {
@@ -24,5 +25,7 @@ export const useMobile = (size: string) => {
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
   }, []); // Empty array ensures that effect is only run on mount
-  return windowSize;
+  //console.log(windowSize, defaultTheme.breakpoints[size]);
+  return windowSize.width <= defaultTheme.breakpoints[size];
+  //return windowSize;
 }
