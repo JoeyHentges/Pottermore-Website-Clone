@@ -10,6 +10,7 @@ import { createFirestoreInstance, getFirestore, reduxFirestore } from 'redux-fir
 
 import { firebase } from '../src/lib/firebase';
 import { rootReducer, RootReducer } from '../src/redux';
+import { Theme } from '../theme';
 
 const store = createStore(
   rootReducer,
@@ -36,9 +37,6 @@ const GlobalStyles = createGlobalStyle`
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
-    color: #33334F;
-    font-size: 16px;
     margin: 0px;
   }
 `;
@@ -63,8 +61,10 @@ class Init extends App {
               <link rel="shortcut icon" href="/favicon.ico" />
               <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" />
             </Head>
-            <GlobalStyles />
-            <Component {...pageProps} />
+            <Theme>
+              <GlobalStyles />
+              <Component {...pageProps} />
+            </Theme>
           </AuthIsLoaded>
         </ReactReduxFirebaseProvider>
       </Provider>

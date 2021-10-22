@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { FlexContainer } from '../components';
 
 import { Header } from '../containers';
+import { useMobile } from '../hooks';
 
 const Home: React.FC<{}> = ({}) => {
+  const isMobile = useMobile('xs');
+
+  useEffect(() => {
+    console.log(isMobile);
+  }, [isMobile]);
+
   return (
     <>
       <Helmet title="Home" />
       <Header
-        height={75}
+        height={80}
         background="transparent"
         navbarBackground="transparent"
         center={

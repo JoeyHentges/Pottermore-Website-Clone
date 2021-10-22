@@ -33,8 +33,8 @@ const SecureHome: React.FC<{}> = () => {
         defaultBackground="transparent"
         navbarBackground="transparent"
         left={
-          <a href="/">
-            <div style={{ color: 'white' }}>HOME</div>
+          <a href="/" style={{ color: 'white', textDecoration: 'none' }}>
+            HOME
           </a>
         }
         center={

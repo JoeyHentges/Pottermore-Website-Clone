@@ -10,7 +10,7 @@ export const Container = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     background: ${({ background, images }) => images ? `url(${images.mobile ? images.mobile : images.desktop})` : background};
     background-size: cover;
     background-repeat: no-repeat;

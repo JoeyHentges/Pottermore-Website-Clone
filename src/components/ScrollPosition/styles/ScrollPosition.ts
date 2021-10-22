@@ -63,7 +63,7 @@ export const PositionContainer = styled.div`
       animation-iteration-count: infinite;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
       margin-top: 10px;
       &:before { height: 0px; }
     }
@@ -79,7 +79,7 @@ export const PositionContainer = styled.div`
 })};
     animation-duration: 10s;
     animation-iteration-count: infinite;
-    @media only screen and (max-width: 600px) { animation-name: none; }
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) { animation-name: none; }
   }
 
   :nth-child(2) {
@@ -90,7 +90,7 @@ export const PositionContainer = styled.div`
   four: -5,
   five: 0,
 })};
-    @media only screen and (max-width: 600px) { animation-name: none; }
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) { animation-name: none; }
     &:before {
       animation-name: ${MoveLineAnimation({
   one: -20,
@@ -99,7 +99,7 @@ export const PositionContainer = styled.div`
   four: 8,
   five: .85,
 })};
-      @media only screen and (max-width: 600px) { animation-name: none; }
+      @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) { animation-name: none; }
     }
   }
 
@@ -111,7 +111,7 @@ export const PositionContainer = styled.div`
   four: 5,
   five: 0,
 })};
-    @media only screen and (max-width: 600px) { animation-name: none; }
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) { animation-name: none; }
     &:before {
       animation-name: ${MoveLineAnimation({
   one: 12,
@@ -120,7 +120,7 @@ export const PositionContainer = styled.div`
   four: -11,
   five: 1,
 })};
-      @media only screen and (max-width: 600px) { animation-name: none; }
+      @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) { animation-name: none; }
     }
   }
 
@@ -132,7 +132,7 @@ export const PositionContainer = styled.div`
   four: -10,
   five: -7,
 })};
-    @media only screen and (max-width: 600px) { animation-name: none; }
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) { animation-name: none; }
     &:before {
       animation-name: ${MoveLineAnimation({
   one: -18,
@@ -141,7 +141,7 @@ export const PositionContainer = styled.div`
   four: 18,
   five: .9,
 })};
-      @media only screen and (max-width: 600px) { animation-name: none; }
+      @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) { animation-name: none; }
     }
   }
 `;
@@ -152,7 +152,7 @@ export const Container = styled.div`
   top: calc(50vh - 100px);
   z-index: 998;
 
-  @media only screen and (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
     right: 35px;
     top: calc(50vh - 35px);
   }
