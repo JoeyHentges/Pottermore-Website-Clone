@@ -1,3 +1,4 @@
+export { default as Drawer } from './Drawer';
 export * from './FlexContainer';
 export { default as Header } from './Header';
 export { default as Navbar } from './Navbar';

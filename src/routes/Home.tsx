@@ -16,9 +16,8 @@ const Home: React.FC<{}> = ({}) => {
     <>
       <Helmet title="Home" />
       <Header
-        height={80}
-        background="transparent"
-        navbarBackground="transparent"
+        showNavbar
+        transparent
         center={
           <a href="/">
             <img style={{ width: 70, height: 51 }} src="images/wizarding_world_logo.svg" />
@@ -35,7 +34,6 @@ const Home: React.FC<{}> = ({}) => {
             </svg>
           </a>
         }
-        navbar={<Navbar />}
       />
       <FlexContainer
         fullscreen
@@ -56,6 +54,7 @@ const Home: React.FC<{}> = ({}) => {
             color: 'white',
           }}
         >
+          <img src="https://www.wizardingworld.com/_next/image?url=%2Fimages%2Fpages%2Fhome%2Flogo.png&w=576&q=75" />
           <h1>Celebrate 20 years of the first film, Harry Potter and the Philosopher's Stone</h1>
           <p>
             Join us for 20 Years of Movie Magic as we explore iconic scenes from the first film. This week, join us in
@@ -63,25 +62,20 @@ const Home: React.FC<{}> = ({}) => {
           </p>
         </div>
       </FlexContainer>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
+      <h1>home</h1>
     </>
   );
 };

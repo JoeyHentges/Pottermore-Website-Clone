@@ -29,9 +29,7 @@ const SecureHome: React.FC<{}> = () => {
     <div onWheel={(e: { target: Element }) => pauseScrolling && e.target.blur()}>
       <Helmet title="Home" />
       <Header
-        background="transparent"
-        defaultBackground="transparent"
-        navbarBackground="transparent"
+        alwaysTransparent
         left={
           <a href="/" style={{ color: 'white', textDecoration: 'none' }}>
             HOME

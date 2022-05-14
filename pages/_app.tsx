@@ -38,6 +38,7 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0px;
+    overflow-x: hidden;
   }
 `;
 

@@ -7,7 +7,7 @@ export const NavbarText = styled.span`
 `;
 
 export const Container = styled.div`
-  padding: 15px 0;
+  padding: 20px 0;
   width: 100%;
   border-top: 1px solid hsla(0,0%,100%,.15);
   font-size: 13px;
@@ -19,10 +19,6 @@ export const Container = styled.div`
         opacity: 1;
       }
     }
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
-    display: none;
   }
 `;
 
@@ -69,6 +65,7 @@ export const NavbarDropdown = styled.div`
   position: absolute;
   width: 100%;
   z-index: 1000;
+  margin-top: 10px;
   
   &.dropdown-active {
     display: block;
@@ -82,10 +79,10 @@ export const NavbarDropdown = styled.div`
     height: 1px;
     width: 75%;
     bottom: 0;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   
@@ -101,7 +98,6 @@ export const NavbarItem = styled.div`
       -webkit-transform: rotate(-90deg);
       -moz-transform: rotate(-90deg);
       transform: rotate(-90deg);
-      margin-bottom: 25px;
     }
     
     ${NavbarText} {

@@ -12,6 +12,12 @@ export const defaultTheme = {
     xl: 1336, // desktop hd
   },
   colors,
+
+  // default background colors
+  background: {
+    default: '#10141b',
+    highlight: '#242633',
+  },
 };
 
 export const Theme = ({ children }) => <ThemeProvider theme={defaultTheme}> {children} </ThemeProvider>;

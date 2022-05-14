@@ -4,7 +4,6 @@ export const Navbar = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  background: ${({ background }) => background};
   transition: background 0.4s ease-in;
 
   .navbar-dropdown {
@@ -22,12 +21,11 @@ export const HeaderContainer = styled.div`
   flex-basis: 33.33%;
   transition: background-color 0.4s ease-in;
 
-  height: ${({ height }) => height}px;
-  background: ${({ background }) => background};
+  height: 85px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
-    width: calc(100% - 40px);
-    padding: 0px 20px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}px) {
+    width: calc(100% - 50px);
+    padding: 0px 25px;
     background-color:rgba(0, 0, 0, 0.2);
   }
 `;
@@ -36,14 +34,22 @@ export const Container = styled.div`
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 1001;
+
+  ${HeaderContainer} {
+    background: ${({ theme, transparent, alwaysTransparent }) => transparent || alwaysTransparent ? 'transparent' : theme.background.highlight};
+  }
+
+  ${Navbar} {
+    background: ${({ theme, transparent, alwaysTransparent }) => transparent || alwaysTransparent ? 'transparent' : theme.background.default};
+  }
 
   &.active {
     ${Navbar} {
-      background: ${({ navbarDefaultBackground }) => navbarDefaultBackground};
+      background: ${({ theme, alwaysTransparent }) => alwaysTransparent ? 'transparent' : theme.background.default};
     }
     ${HeaderContainer} {
-      background: ${({ defaultBackground }) => defaultBackground};
+      background: ${({ theme, alwaysTransparent }) => alwaysTransparent ? 'transparent' : theme.background.highlight};
       @media (max-width: ${({ theme }) => theme.breakpoints.sm}px) {
         background-color:rgba(0, 0, 0, 0.2);
       }
@@ -55,10 +61,10 @@ export const Container = styled.div`
 
   &:hover {
     ${Navbar} {
-      background: ${({ navbarDefaultBackground }) => navbarDefaultBackground};
+      background: ${({ theme, alwaysTransparent }) => alwaysTransparent ? 'transparent' : theme.background.default};
     }
     ${HeaderContainer} {
-      background: ${({ defaultBackground }) => defaultBackground};
+      background: ${({ theme, alwaysTransparent }) => alwaysTransparent ? 'transparent' : theme.background.highlight};
     }
     .navbar-dropdown {
       background: ${({ dropdownBackground }) => dropdownBackground};

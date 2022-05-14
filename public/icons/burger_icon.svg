@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  width="25px"
+  height="25px"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g stroke="#FFFFFF" stroke-width="2">
+    <path
+      d="M0,0.5 L23,0.5"
+      class="HamburgerMenu_hamburgerTop__PSyTI"
+      transform="matrix(1,0,0,1,0,0)"
+      data-svg-origin="16.099999999999998 0.5"
+      style="transform-origin: 0px 0px; stroke-dasharray: 0px, 0px, 70%, 15%;"
+    ></path>
+    <path
+      d="M0,9.5 L23,9.5"
+      class="HamburgerMenu_hamburgerMiddle__ENRZ5"
+      data-svg-origin="5.75 9.5"
+      transform="matrix(1,0,0,1,0,0)"
+      style="transform-origin: 0px 0px; stroke-dasharray: 0px, 0px, 100%, 0px; opacity: 1;"
+    ></path>
+    <path
+      d="M23,18.5 L0,18.5"
+      class="HamburgerMenu_hamburgerBottom__3pcGx"
+      data-svg-origin="11.5 18.5"
+      transform="matrix(1,0,0,1,0,0)"
+      style="transform-origin: 0px 0px; stroke-dasharray: 0px, 0px, 70%, 15%;"
+    ></path>
+  </g>
+</svg>
